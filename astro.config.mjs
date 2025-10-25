@@ -29,7 +29,7 @@ import mdx from "@astrojs/mdx";
 import searchIndexer from "./src/integrations/searchIndex.mts";
 // https://astro.build/config
 export default defineConfig({
-	site: "https://firefly.cuteleaf.cn/",
+	site: "https://xpfxzxc.github.io",
 
 	base: "/",
 	trailingSlash: "always",
@@ -55,7 +55,7 @@ export default defineConfig({
 			animateHistoryBrowsing: false,
 			skipPopStateHandling: (event) => {
 				// 跳过锚点链接的处理，让浏览器原生处理
-				return event.state && event.state.url && event.state.url.includes("#");
+				return event.state?.url?.includes("#");
 			},
 		}),
 		icon({
@@ -120,7 +120,7 @@ export default defineConfig({
 				const pathname = url.pathname;
 
 				// 检查各个页面是否启用
-				if (pathname === '/anime/' && !siteConfig.pages.anime) {
+				if (pathname === "/anime/" && !siteConfig.pages.anime) {
 					return false;
 				}
 				if (pathname === '/sponsor/' && !siteConfig.pages.sponsor) {
