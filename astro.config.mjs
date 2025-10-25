@@ -27,7 +27,7 @@ import { remarkMermaid } from "./src/plugins/remark-mermaid.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 // https://astro.build/config
 export default defineConfig({
-	site: "https://demo-firefly.netlify.app/",
+	site: "https://xpfxzxc.github.io",
 
 	base: "/",
 	trailingSlash: "always",
@@ -53,7 +53,7 @@ export default defineConfig({
 			animateHistoryBrowsing: false,
 			skipPopStateHandling: (event) => {
 				// 跳过锚点链接的处理，让浏览器原生处理
-				return event.state && event.state.url && event.state.url.includes("#");
+				return event.state?.url?.includes("#");
 			},
 		}),
 		icon({
@@ -116,21 +116,21 @@ export default defineConfig({
 				// 根据页面开关配置过滤sitemap
 				const url = new URL(page);
 				const pathname = url.pathname;
-				
+
 				// 检查各个页面是否启用
-				if (pathname === '/anime/' && !siteConfig.pages.anime) {
+				if (pathname === "/anime/" && !siteConfig.pages.anime) {
 					return false;
 				}
-				if (pathname === '/projects/' && !siteConfig.pages.projects) {
+				if (pathname === "/projects/" && !siteConfig.pages.projects) {
 					return false;
 				}
-				if (pathname === '/timeline/' && !siteConfig.pages.timeline) {
+				if (pathname === "/timeline/" && !siteConfig.pages.timeline) {
 					return false;
 				}
-				if (pathname === '/skills/' && !siteConfig.pages.skills) {
+				if (pathname === "/skills/" && !siteConfig.pages.skills) {
 					return false;
 				}
-				
+
 				return true;
 			},
 		}),
