@@ -6,18 +6,14 @@ import { fontConfig } from "./fontConfig";
 const SITE_LANG = "zh_CN";
 
 export const siteConfig: SiteConfig = {
-  title: "Firefly",
-  subtitle: "Demo site",
-  description:
-    "Firefly 是一款基于 Astro 框架开发的清新美观且现代化个人博客主题，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。",
+  title: "未来之蓝 | xpfxzxc 的个人博客",
+  subtitle: "个人学习和日常零散想法的记录空间，内容随性且不定期更新",
+  description: "未来之蓝是 xpfxzxc 的个人博客，记录个人学习和日常零散想法。心怀蔚蓝愿景，脚踏实地前行。每一篇记录都是通向理想未来的坚实脚印。",
   keywords: [
-    "Firefly",
-    "Fuwari",
-    "Astro",
-    "ACGN",
-    "博客",
-    "技术博客",
-    "静态博客",
+    "xpfxzxc", "未来之蓝", "个人博客",
+    "个人成长", "技术分享", "生活随想",
+    "编程学习", "ACGN", "动漫", "二次元", "游戏",
+    "非专业博客", "学习记录", "读书笔记"
   ],
 
   lang: SITE_LANG,
