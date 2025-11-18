@@ -40,10 +40,10 @@ export const siteConfig: SiteConfig = {
   // { type: "image", value: "https://example.com/logo.png", alt: "Firefly Logo" }
   navbarLogo: {
     type: "image",
-    value: "/assets/images/LiuYingPure3.svg",
-    alt: "🍀",
+    value: "/assets/images/logo.webp",
+    alt: "未来之蓝博客 Logo - 一本翻开的书与飞向上方的星辰，象征知识、记录与通向未来的愿景",
   },
-  navbarTitle: "Firefly", // 导航栏标题，可以设置为与 title 不同的值，如果不设置则使用 title
+  navbarTitle: "未来之蓝", // 导航栏标题，可以设置为与 title 不同的值，如果不设置则使用 title
 
   // 追番配置
   bangumi: {
