@@ -96,21 +96,21 @@ export const siteConfig: SiteConfig = {
       // 图片位置
       // 支持所有CSS object-position值，如: 'top', 'center', 'bottom', 'left top', 'right bottom', '25% 75%', '10px 20px'..
       // 如果不知道怎么配置百分百之类的配置，推荐直接使用：'center'居中，'top'顶部居中，'bottom' 底部居中，'left'左侧居中，'right'右侧居中
-      position: "0% 20%",
+      position: "center 9%",
       
       homeText: {
         // 主页显示自定义文本（全局开关）
         enable: true,
         // 主页横幅主标题
-        title: "Lovely firefly!",
+        title: "Future Archives!",
         // 主页横幅副标题
         subtitle: [
-          "In Reddened Chrysalis, I Once Rest",
-          "From Shattered Sky, I Free Fall",
-          "Amidst Silenced Stars, I Deep Sleep",
-          "Upon Lighted Fyrefly, I Soon Gaze",
-          "From Undreamt Night, I Thence Shine",
-          "In Finalized Morrow, I Full Bloom",
+          "Today's thoughts, tomorrow's foundation",
+          "Building the blueprint of growth through recording",
+          "Every idea is a rehearsal for the future",
+          "Words are the workshop where thoughts take form",
+          "Continuously writing the self in progress",
+          "Building the future with life's imprints",
         ],
         typewriter: {
           enable: true, // 启用副标题打字机效果
@@ -122,15 +122,15 @@ export const siteConfig: SiteConfig = {
       credit: {
         enable: {
           desktop: true, // 桌面端显示横幅图片来源文本
-          mobile: false, // 移动端显示横幅图片来源文本
+          mobile: true, // 移动端显示横幅图片来源文本
         },
         text: {
-          desktop: "Pixiv - 晚晚喵", // 桌面端要显示的来源文本
-          mobile: "Mobile Credit", // 移动端要显示的来源文本
+          desktop: "Pixiv - 鈴木シロリ", // 桌面端要显示的来源文本
+          mobile: "Pixiv - Orivayne", // 移动端要显示的来源文本
         },
         url: {
-          desktop: "https://www.pixiv.net/artworks/135490046", // 桌面端原始艺术品或艺术家页面的 URL 链接
-          mobile: "", // 移动端原始艺术品或艺术家页面的 URL 链接
+          desktop: "https://www.pixiv.net/artworks/108043909", // 桌面端原始艺术品或艺术家页面的 URL 链接
+          mobile: "https://www.pixiv.net/artworks/130379063", // 移动端原始艺术品或艺术家页面的 URL 链接
         },
       },
       navbar: {
@@ -159,7 +159,7 @@ export const siteConfig: SiteConfig = {
     overlay: {
       zIndex: -1, // 层级，确保壁纸在背景层
       opacity: 0.8, // 壁纸透明度
-      blur: 1, // 背景模糊程度
+      blur: 0.5, // 背景模糊程度
     },
   },
 
