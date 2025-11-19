@@ -15,16 +15,28 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
     icon: "material-symbols:link",
     children: [
       {
+        name: "Email",
+        url: "mailto:xpfxzxc@gmail.com",
+        external: true,
+        icon: "material-symbols:mail",
+      },
+      {
         name: "GitHub",
-        url: "https://github.com/CuteLeaf/Firefly",
+        url: "https://github.com/xpfxzxc",
         external: true,
         icon: "fa6-brands:github",
       },
       {
         name: "Bilibili",
-        url: "https://space.bilibili.com/38932988",
+        url: "https://space.bilibili.com/12533717",
         external: true,
         icon: "fa6-brands:bilibili",
+      },
+      {
+        name: "Steam",
+        url: "https://steamcommunity.com/profiles/76561198327614842",
+        external: true,
+        icon: "fa6-brands:steam",
       },
     ],
   });
