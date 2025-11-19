@@ -99,7 +99,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
       // 组件类型：广告栏组件 2
       type: "advertisement",
       // 是否启用该组件
-      enable: false,
+      enable: true,
       // 组件显示顺序
       order: 7,
       // 组件位置："sticky" 表示粘性定位
