@@ -1,37 +1,32 @@
 # 关于我 / About Me
 
-你好！我是 **夏叶** ，一个在数字世界中默默无闻的一片叶子。
+欢迎来到我的小角落。这里，主要是我写给自己看的一些文字和记录。很高兴你路过这里，并驻足阅读。
+
+我是 **xpfxzxc**。这个昵称很久前就开始使用了，但我忘记了这个昵称如何是取的，这个昵称可能没有什么含义吧。
+
+我是一个 98 后的听障人，不擅长言语沟通，头脑反应略慢，没创作灵感，平时喜欢独来独往、在网上冲浪。没有什么特长，唯一我比较懂的就是编程和游戏了，但在圈子里算是在底层水平，在日常上也不太拿得出手。我对编程曾充满热情，现在有点生疏，仍然“玩”得不太懂，但不想放弃。
+
+建立这个博客的初衷是我单纯地想试试部署好看的个人博客，还有记录以后学习到的技能知识。有时头脑里会有较多的想法，此时如果能够主动去梳理思路并记录下来，对当前和以后都会颇有收获。
+
+这里可能没有干货和指南，只有非常个人的、不成熟的想法和个人学习记录。如果你在我的文字里，找到了一丝共鸣，或者从中受到启发，或者从中成功解决某些疑惑，那将是我莫大的荣幸。
+
+欢迎你在想说话的时候，通过评论或邮件与我分享你的感受。我不一定会及时回复，但会认真阅读。
 
 ## 🛠️ 关于本站
 
-这个网站使用 **Astro** 框架构建，采用了 [Firefly](https://github.com/CuteLeaf/Firefly)模板
-
+这个网站使用 **Astro** 框架构建，采用了 [Firefly](https://github.com/CuteLeaf/Firefly) 主题。
 
 **Firefly** 是一款基于 Astro 框架开发的清新美观且现代化个人博客主题，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。
 
-
-**🖥️在线预览： [Firefly - Demo site](https://firefly.cuteleaf.cn/)**
-
-**🏠我的博客： [https://blog.cuteleaf.cn](https://blog.cuteleaf.cn/)**
-
-**📝Firefly使用文档： [https://docs-firefly.cuteleaf.cn](https://docs-firefly.cuteleaf.cn/)**
-
-**⭐Firefly开源地址：https://github.com/CuteLeaf/Firefly** 
-
 ::github{repo="CuteLeaf/Firefly"}
-
-<img src="/assets/images/firefly.png" />
-
-
 
 ## 📫 联系方式
 
 如果你想和我交流技术问题，分享有趣的想法，或者只是想打个招呼，欢迎通过以下方式联系我：
 
-- 💻 **GitHub**: [CuteLeaf](https://github.com/CuteLeaf)
-- ✉️ **Email**: [xiaye@msn.com](mailto:xiaye@msn.com)
+- 💻 **GitHub**：[xpfxzxc](https://github.com/xpfxzxc)
+- ✉️ **Email**：[xpfxzxc@gmail.com](mailto:xpfxzxc@gmail.com)
 
 ---
 
-*感谢你的来访！希望在这里能找到对你有用的内容。Firefly博客系统完全开源，如果喜欢的话，不妨给个GitHub点个Star ⭐ 支持一下！*
-
+*感谢你的来访！希望在这里能找到对你有用的内容。如果想感谢或者想支持我继续创作，可以访问我的赞助页面。*
