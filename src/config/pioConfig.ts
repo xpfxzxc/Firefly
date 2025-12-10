@@ -1,15 +1,17 @@
 import type { SpineModelConfig, Live2DModelConfig } from "../types/config";
 
-// Spine 看板娘配置
+// Spine 看板娘配置（版本 3.8）
 export const spineModelConfig: SpineModelConfig = {
   enable: true, // 启用 Spine 看板娘
   model: {
     // Spine模型文件路径
-    path: "/pio/models/spine/firefly/1310.json",
-    scale: 1.0, // 模型缩放比例
-    x: 0, // X轴偏移
-    y: 0, // Y轴偏移
+    path: "/pio/models/spine/shiroko/NP0172_spr.json",
   },
+  atlas: {
+    // Spine模型纹理文件路径
+    path: "/pio/models/spine/shiroko/NP0172_spr.atlas",
+  },
+  premultipliedAlpha: true, // 使用预乘Alpha
   position: {
     // 显示位置 bottom-left，bottom-right，top-left，top-right，注意：在右下角可能会挡住返回顶部按钮
     corner: "bottom-left",
@@ -17,33 +19,43 @@ export const spineModelConfig: SpineModelConfig = {
     offsetY: 0, // 距离底部0px
   },
   size: {
-    width: 135, // 容器宽度
-    height: 165, // 容器高度
+    width: 625, // 容器宽度
+    height: 2150, // 容器高度
+    zoom: 0.18, // 容器缩放比例
+  },
+  viewport: {
+    padLeft: 0,
+    padRight: 0,
+    padTop: 0,
+    padBottom: 0,
+    x: -300,
+    y: -750,
+    width: 625,
+    height: 2150,
+    debugRender: false,
+  },
+  animations: {
+    initial: "Idle_01", // 初始动画
+    idle: ["Idle_01"], // 待机动画列表
+    idleInterval: 8000, // 待机动画切换间隔（8秒）
+    persistent: ["halo_float"] // 持续播放的动画列表
   },
   interactive: {
     enabled: true, // 启用交互功能
-    clickAnimations: [
-      "emoji_0",
-      "emoji_1",
-      "emoji_2",
-      "emoji_3",
-      "emoji_4",
-      "emoji_5",
-      "emoji_6",
-    ], // 点击时随机播放的动画列表
-    clickMessages: [
-      "你好呀！我是流萤~",
-      "今天也要加油哦！✨",
-      "想要一起去看星空吗？🌟",
-      "记得要好好休息呢~",
-      "有什么想对我说的吗？💫",
-      "让我们一起探索未知的世界吧！🚀",
-      "每一颗星星都有自己的故事~⭐",
-      "希望能带给你温暖和快乐！💖",
+    clickAnimations: ["00", "01", "02", "04", "05", "06", "07", "08", "99"], // 点击时随机播放的动画列表
+    clickMessages: [ // ---
+      "欢迎来到这个小小的空间~",
+      "今天也请享受探索的乐趣吧！",
+      "发现什么有趣的内容了吗？",
+      "要喝杯茶休息一下吗？",
+      "希望你能在这里找到需要的信息",
+      "阳光正好，是个适合阅读的日子",
+      "每个角落都藏着小小惊喜",
+      "感谢你的到访，愿你有个美好的一天",
+      "这里记录着思考和成长的痕迹",
+      "慢慢来，享受这段时光",
     ], // 点击时随机显示的文字消息
     messageDisplayTime: 3000, // 文字显示时间（毫秒）
-    idleAnimations: ["idle", "emoji_0", "emoji_1", "emoji_3", "emoji_4"], // 待机动画列表
-    idleInterval: 8000, // 待机动画切换间隔（8秒）
   },
   responsive: {
     hideOnMobile: true, // 在移动端隐藏

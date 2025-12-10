@@ -12,13 +12,17 @@ import { url } from "@/utils/url-utils";
       position: fixed;
       ${spineModelConfig.position.corner.includes("right") ? "right" : "left"}: ${spineModelConfig.position.offsetX}px;
       ${spineModelConfig.position.corner.includes("top") ? "top" : "bottom"}: ${spineModelConfig.position.offsetY}px;
-      width: ${spineModelConfig.size.width}px;
-      height: ${spineModelConfig.size.height}px;
       pointer-events: auto;
       z-index: 1000;
     `}
     >
-      <div id="spine-player-container" style="width: 100%; height: 100%;" />
+      <div
+        id="spine-player-container"
+        style={`
+          width: ${spineModelConfig?.size?.width || 280}px;
+          height: ${spineModelConfig?.size?.height || 400}px;
+          zoom: ${spineModelConfig?.size?.zoom || 1};
+        `} />
       <div id="spine-error" style="display: none;" />
     </div>
   )
@@ -27,7 +31,7 @@ import { url } from "@/utils/url-utils";
 <!-- 引入消息框组件 -->
 <MessageBox />
 
-<script define:vars={{ spineModelConfig, modelPath: url(spineModelConfig.model.path), atlasPath: url(spineModelConfig.model.path.replace(".json", ".atlas")), cssPath: url("/pio/static/spine-player.min.css"), jsPath: url("/pio/static/spine-player.min.js") }}>
+<script define:vars={{ spineModelConfig, modelPath: url(spineModelConfig.model.path), atlasPath: url(spineModelConfig.atlas.path), cssPath: url("/pio/static/spine-player.min.css"), jsPath: url("/pio/static/spine-player.min.js") }}>
   // 动态加载 Spine CSS（带本地备用）
   function loadSpineCSS() {
     if (!spineModelConfig.enable) return;
@@ -39,8 +43,7 @@ import { url } from "@/utils/url-utils";
     // 首先尝试加载 CDN CSS
     const cdnLink = document.createElement("link");
     cdnLink.rel = "stylesheet";
-    cdnLink.href =
-      "https://unpkg.com/@esotericsoftware/spine-player@4.2.*/dist/spine-player.min.css";
+    cdnLink.href = cssPath;
 
     // 监听加载失败事件，自动回退到本地文件
     cdnLink.onerror = function () {
@@ -172,8 +175,7 @@ import { url } from "@/utils/url-utils";
 
         console.log("📦 Loading Spine runtime...");
         const script = document.createElement("script");
-        script.src =
-          "https://unpkg.com/@esotericsoftware/spine-player@4.2.*/dist/iife/spine-player.min.js";
+        script.src = jsPath;
         script.onload = () => {
           console.log("✅ Spine runtime loaded from CDN");
           resolve();
@@ -230,18 +232,29 @@ import { url } from "@/utils/url-utils";
 
       // 创建 SpinePlayer
       const player = new window.spine.SpinePlayer("spine-player-container", {
-        skeleton: modelPath,
-        atlas: atlasPath,
-        animation: "idle",
+        jsonUrl: modelPath.endsWith(".json") ? modelPath : null,
+        skelUrl: modelPath.endsWith(".skel") ? modelPath : null,
+        atlasUrl: atlasPath,
+        animation: spineModelConfig.animations.initial,
         backgroundColor: "#00000000", // 透明背景
         showControls: false, // 隐藏控件
         alpha: true,
-        premultipliedAlpha: false,
+        premultipliedAlpha: spineModelConfig.premultipliedAlpha || true,
+        viewport: spineModelConfig.viewport,
         success: (player) => {
           console.log("🎉 Spine model loaded successfully!");
 
           // 保存播放器实例引用
           window.spinePlayerInstance = player;
+
+          // 播放持续动画
+          spineModelConfig.animations.persistent.forEach((anim, i) => {
+            try {
+              player.animationState.setAnimation(i + 1, anim, true);
+            } catch (e) {
+              console.warn("Failed to play persistent animation:", e);
+            }
+          });
 
           // 初始化完成后设置默认姿态
           setTimeout(() => {
@@ -254,6 +267,21 @@ import { url } from "@/utils/url-utils";
               }
             }
           }, 500);
+
+          // 设置待机动画循环
+          if (spineModelConfig.animations.idle.length > 1) {
+            setInterval(() => {
+              try {
+                const idleAnims =
+                  spineModelConfig.animations.idle;
+                const randomIdle =
+                  idleAnims[Math.floor(Math.random() * idleAnims.length)];
+                player.animationState.setAnimation(0, randomIdle, true);
+              } catch (e) {
+                console.warn("Failed to play idle animation:", e);
+              }
+            }, spineModelConfig.animations.idleInterval || 10000);
+          }
 
           // 设置交互功能
           if (spineModelConfig.interactive.enabled) {
@@ -272,25 +300,20 @@ import { url } from "@/utils/url-utils";
                 lastClickTime = currentTime;
 
                 // 随机播放点击动画
-                const clickAnims =
-                  spineModelConfig.interactive.clickAnimations ||
-                  (spineModelConfig.interactive.clickAnimation
-                    ? [spineModelConfig.interactive.clickAnimation]
-                    : []);
-
+                const clickAnims = spineModelConfig.interactive.clickAnimations
                 if (clickAnims.length > 0) {
                   try {
                     const randomClickAnim =
                       clickAnims[Math.floor(Math.random() * clickAnims.length)];
-                    player.setAnimation(randomClickAnim, false);
+                    player.animationState.setAnimation(0, randomClickAnim, false);
 
                     // 动画播放完成后回到待机状态
                     setTimeout(() => {
                       const idleAnims =
-                        spineModelConfig.interactive.idleAnimations;
+                        spineModelConfig.animations.idle;
                       const randomIdle =
                         idleAnims[Math.floor(Math.random() * idleAnims.length)];
-                      player.setAnimation(randomIdle, true);
+                      player.animationState.setAnimation(0, randomIdle, true);
                     }, 2000);
                   } catch (e) {
                     console.warn("Failed to play click animation:", e);
@@ -310,21 +333,6 @@ import { url } from "@/utils/url-utils";
                   isClickProcessing = false;
                 }, 500);
               });
-
-              // 设置待机动画循环
-              if (spineModelConfig.interactive.idleAnimations.length > 1) {
-                setInterval(() => {
-                  try {
-                    const idleAnims =
-                      spineModelConfig.interactive.idleAnimations;
-                    const randomIdle =
-                      idleAnims[Math.floor(Math.random() * idleAnims.length)];
-                    player.setAnimation(randomIdle, true);
-                  } catch (e) {
-                    console.warn("Failed to play idle animation:", e);
-                  }
-                }, spineModelConfig.interactive.idleInterval);
-              }
             }
           }
 

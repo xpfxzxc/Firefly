@@ -1,0 +1,104 @@
+
+NP0172_spr.png
+size: 1894,316
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+00
+  rotate: false
+  xy: 987, 164
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+01
+  rotate: false
+  xy: 987, 12
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+02
+  rotate: false
+  xy: 1139, 164
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+03
+  rotate: false
+  xy: 1139, 12
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+04
+  rotate: false
+  xy: 1291, 164
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+05
+  rotate: false
+  xy: 1291, 12
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+06
+  rotate: false
+  xy: 1443, 164
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+07
+  rotate: false
+  xy: 1443, 12
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+08
+  rotate: false
+  xy: 1595, 164
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+99
+  rotate: false
+  xy: 1595, 12
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+NP017
+  rotate: true
+  xy: 2, 2
+  size: 312, 983
+  orig: 312, 983
+  offset: 0, 0
+  index: -1
+box
+  rotate: true
+  xy: 1827, 244
+  size: 70, 65
+  orig: 70, 65
+  offset: 0, 0
+  index: -1
+halo
+  rotate: true
+  xy: 1747, 92
+  size: 222, 78
+  orig: 222, 78
+  offset: 0, 0
+  index: -1
+obj_front hair
+  rotate: false
+  xy: 1747, 2
+  size: 138, 88
+  orig: 138, 90
+  offset: 0, 2
+  index: -1

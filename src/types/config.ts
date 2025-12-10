@@ -364,27 +364,44 @@ export type SakuraConfig = {
 export type SpineModelConfig = {
   enable: boolean; // 是否启用 Spine 看板娘
   model: {
-    path: string; // 模型文件路径 (.json)
-    scale?: number; // 模型缩放比例，默认1.0
-    x?: number; // X轴偏移，默认0
-    y?: number; // Y轴偏移，默认0
+    path: string; // 模型文件路径 (.json) 或 (.skel)
   };
+  atlas: {
+    path: string; // 模型纹理文件路径 (.atlas)
+  };
+  premultipliedAlpha?: boolean; // 是否使用预乘Alpha，默认true
   position: {
     corner: "bottom-left" | "bottom-right" | "top-left" | "top-right"; // 显示位置
     offsetX?: number; // 水平偏移量，默认20px
     offsetY?: number; // 垂直偏移量，默认20px
   };
-  size: {
+  size?: {
     width?: number; // 容器宽度，默认280px
     height?: number; // 容器高度，默认400px
+    zoom?: number; // 缩放比例，默认1.0
   };
+  viewport?: {
+    x?: number; // 视口X坐标
+    y?: number; // 视口Y坐标
+    width?: number; // 视口宽度
+    height?: number; // 视口高度
+    padLeft?: string | number; // 视口左侧内边距
+    padRight?: string | number; // 视口右侧内边距
+    padTop?: string | number; // 视口上侧内边距
+    padBottom?: string | number; // 视口下侧内边距
+    debugRender?: boolean; // 是否启用调试渲染
+  };
+  animations: {
+    initial: string; // 初始动画
+    idle: string[]; // 待机动画列表
+    idleInterval?: number; // 待机动画切换间隔（毫秒），默认10000
+    persistent: string[]; // 持续播放的动画列表
+  },
   interactive?: {
     enabled?: boolean; // 是否启用交互功能，默认true
     clickAnimations?: string[]; // 点击时随机播放的动画列表
     clickMessages?: string[]; // 点击时随机显示的文字消息
     messageDisplayTime?: number; // 文字显示时间（毫秒），默认3000
-    idleAnimations?: string[]; // 待机动画列表
-    idleInterval?: number; // 待机动画切换间隔（毫秒），默认10000
   };
   responsive?: {
     hideOnMobile?: boolean; // 是否在移动端隐藏，默认false
