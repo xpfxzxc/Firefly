@@ -1,6 +1,6 @@
 ---
 title: 基于 Firefly 主题的 Astro 博客部署（四）：giscus 评论系统配置
-published: 2025-11-12
+published: 2025-11-24
 description: "记录了自己在基于 Firefly 主题的 Astro 博客上配置启用 giscus 评论系统，并简单总结了该评论系统的部分流程。"
 tags: ["博客部署", "Astro", "Firefly", "开源主题", "评论系统", "giscus"]
 category: 实操记录

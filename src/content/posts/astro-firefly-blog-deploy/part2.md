@@ -1,6 +1,6 @@
 ---
 title: 基于 Firefly 主题的 Astro 博客部署（二）：文章发布
-published: 2025-11-03
+published: 2025-11-10
 description: "记录了自己在基于 Firefly 主题的 Astro 博客上，对文章文件各要素的探索与简单总结，并接触到 Front matter 和 Markdown 扩展语法。"
 tags: ["博客部署", "Astro", "Firefly", "开源主题", "Front matter", "Markdown"]
 category: 实操记录

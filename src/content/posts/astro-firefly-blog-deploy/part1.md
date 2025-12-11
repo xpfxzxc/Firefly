@@ -1,6 +1,6 @@
 ---
 title: 基于 Firefly 主题的 Astro 博客部署（一）：从零到 GitHub Pages
-published: 2025-10-29
+published: 2025-11-03
 description: "记录了自己是如何使用开源的 Firefly 主题，在 GitHub Pages 上从零开始部署基于 Astro 的个人博客。"
 tags: ["博客部署", "Astro", "Firefly", "开源主题", "GitHub Pages", "GitHub Actions", "Git"]
 category: 实操记录

@@ -1,6 +1,6 @@
 ---
 title: 基于 Firefly 主题的 Astro 博客部署（三）：站点配置修改
-published: 2025-11-06
+published: 2025-11-19
 description: "记录了自己在基于 Firefly 主题的 Astro 博客上修改个人名称、头像、介绍、公告、背景壁纸等配置的操作。"
 tags: ["博客部署", "Astro", "Firefly", "开源主题", "站点配置"]
 category: 实操记录

@@ -1,6 +1,6 @@
 ---
 title: 基于 Firefly 主题的 Astro 博客部署（五）：看板娘配置
-published: 2025-12-01
+published: 2025-12-11
 description: "记录了自己在基于 Firefly 主题的 Astro 博客上修改看板娘 Spine 模型配置的过程，以及在这过程中踩过的坑点，并对一些专有词汇做了简单解释。"
 tags: ["博客部署", "Astro", "Firefly", "看板娘", "Spine", "Live2D"]
 category: 实操记录
